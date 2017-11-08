@@ -11,4 +11,4 @@ fs.readFile('./nodejs-logo.bmp',function(err,buf){
     console.log('height:',buf.readInt32LE(0x16));
     console.log('color depth',buf.readUInt16LE(0x1c));
   }
-})
+});

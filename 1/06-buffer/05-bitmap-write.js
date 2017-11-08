@@ -28,7 +28,7 @@ for(var i=54;i<totalSize;i+=4){
   buf.writeUInt32LE(0xff0000ff,i);
 }
 fs.writeFile('./out.bmp',buf,function(err){
-  if(err !=null){
+  if(err !==null){
     console.error(err);
     process.exit(1);
   }
