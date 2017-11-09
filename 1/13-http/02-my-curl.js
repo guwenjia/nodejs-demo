@@ -1,10 +1,15 @@
 #!/usr/bin/node
 
 var http = require('http');
+var url = require('url');
 
-var url = process.argv[2] || 'http://sample.wangding.in/web/one-div.html';
+var addr = process.argv[2] || 'http://www.sian.com';
+var options = url.parse(addr);
 
-http.get(url,function(res){
+options.method = 'GET';
+options.headers = {'User-Agent':'02-my-curl.js'};
+
+http.get(options,function(res){
   console.log('status:',res.statusCode);
   console.log('status message:',res.statusMessage);
   console.log('HTTP version:',res.httpVersion);
@@ -15,5 +20,4 @@ http.get(url,function(res){
   
   res.pipe(process.stdout);
 });
-
 
