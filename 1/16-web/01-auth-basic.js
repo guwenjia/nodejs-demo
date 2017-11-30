@@ -33,4 +33,7 @@ function sendSecretMsg(req,res){
     res.end('who you are?');
   }
 }
+function sendNormalMsg(){
+  console.log('Who you are?');
+}
 
